@@ -11,7 +11,7 @@ class CustomRichToSwitch extends StatelessWidget {
 
   final String primaryText;
   final String clicableText;
-  final VoidCallback onPress;
+  final VoidCallback? onPress;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class CustomRichToSwitch extends StatelessWidget {
                 text: clicableText,
                 style: roboto16TextStyle.copyWith(color: orange),
                 recognizer: TapGestureRecognizer()
-                  ..onTap = () => debugPrint('switch')),
+                  ..onTap = onPress),
           ]),
         ],
       ),

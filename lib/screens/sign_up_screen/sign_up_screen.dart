@@ -11,7 +11,54 @@ class SignUpScreen extends StatefulWidget {
   State<SignUpScreen> createState() => _SignUpScreenState();
 }
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _SignUpScreenState extends State<SignUpScreen> with AuthWidget {
+  Widget get privacyTextRich => RichText(
+    textAlign: TextAlign.center,
+    text: TextSpan(
+      style: DefaultTextStyle.of(context).style,
+      children: <TextSpan>[
+        TextSpan(
+          text: signUpTextRichPartOne.localized,
+          style:
+          roboto16TextStyle.copyWith(fontWeight: FontWeight.w400),
+        ),
+        TextSpan(children: [
+          const WidgetSpan(
+            child: Padding(
+              padding: EdgeInsets.only(left: 4.0),
+            ),
+          ),
+          TextSpan(
+              text: signUpTextRichPartTwo.localized,
+              style: roboto16TextStyle.copyWith(color: orange),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () => debugPrint('Terms of Service')),
+          TextSpan(children: [
+            const WidgetSpan(
+              child: Padding(
+                padding: EdgeInsets.only(left: 4.0),
+              ),
+            ),
+            TextSpan(
+                text: and.localized,
+                style: roboto16TextStyle.copyWith(
+                    fontWeight: FontWeight.w400)),
+            const WidgetSpan(
+              child: Padding(
+                padding: EdgeInsets.only(left: 4.0),
+              ),
+            ),
+          ]),
+          TextSpan(
+              text: privacyPolicy.localized,
+              style: roboto16TextStyle.copyWith(color: orange),
+              recognizer: TapGestureRecognizer()
+                ..onTap = () => debugPrint('Privacy Policy')),
+        ]),
+      ],
+    ),
+  );
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -27,6 +74,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           const SizedBox(
             height: 34.0,
           ),
+
           /// TODO: - info text vory heto kkarmri mi tox e u keter e dre,tox toxer shat lini
           const CustomForm(
             isLogin: false,
@@ -55,6 +103,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           const SizedBox(
             height: 24.0,
           ),
+
           ///TODO: - onPress chi ashxati
           CustomRichToSwitch(
             primaryText: alreadyHaveAccount.localized,
@@ -64,54 +113,62 @@ class _SignUpScreenState extends State<SignUpScreen> {
           const SizedBox(
             height: 16.0,
           ),
-          RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              style: DefaultTextStyle.of(context).style,
-              children: <TextSpan>[
-                TextSpan(
-                  text: signUpTextRichPartOne.localized,
-                  style:
-                      roboto16TextStyle.copyWith(fontWeight: FontWeight.w400),
-                ),
-                TextSpan(children: [
-                  const WidgetSpan(
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 4.0),
-                    ),
-                  ),
-                  TextSpan(
-                      text: signUpTextRichPartTwo.localized,
-                      style: roboto16TextStyle.copyWith(color: orange),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () => debugPrint('Terms of Service')),
-                  TextSpan(children: [
-                    const WidgetSpan(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 4.0),
-                      ),
-                    ),
-                    TextSpan(
-                        text: and.localized,
-                        style: roboto16TextStyle.copyWith(
-                            fontWeight: FontWeight.w400)),
-                    const WidgetSpan(
-                      child: Padding(
-                        padding: EdgeInsets.only(left: 4.0),
-                      ),
-                    ),
-                  ]),
-                  TextSpan(
-                      text: privacyPolicy.localized,
-                      style: roboto16TextStyle.copyWith(color: orange),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () => debugPrint('Privacy Policy')),
-                ]),
-              ],
-            ),
-          ),
+          privacyTextRich,
         ],
       ),
     );
   }
+}
+
+mixin AuthWidget {
+  Widget privacyTextRich_(
+    BuildContext context, {
+    required String info,
+    required String actionTitle,
+    VoidCallback? action,
+  }) =>
+      RichText(
+        textAlign: TextAlign.center,
+        text: TextSpan(
+          style: DefaultTextStyle.of(context).style,
+          children: <TextSpan>[
+            TextSpan(
+              text: info,
+              style: roboto16TextStyle.copyWith(fontWeight: FontWeight.w400),
+            ),
+            TextSpan(children: [
+              const WidgetSpan(
+                child: Padding(
+                  padding: EdgeInsets.only(left: 4.0),
+                ),
+              ),
+              TextSpan(
+                  text: actionTitle,
+                  style: roboto16TextStyle.copyWith(color: orange),
+                  recognizer: TapGestureRecognizer()..onTap = action),
+              TextSpan(children: [
+                const WidgetSpan(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 4.0),
+                  ),
+                ),
+                TextSpan(
+                    text: and.localized,
+                    style: roboto16TextStyle.copyWith(
+                        fontWeight: FontWeight.w400)),
+                const WidgetSpan(
+                  child: Padding(
+                    padding: EdgeInsets.only(left: 4.0),
+                  ),
+                ),
+              ]),
+              TextSpan(
+                  text: privacyPolicy.localized,
+                  style: roboto16TextStyle.copyWith(color: orange),
+                  recognizer: TapGestureRecognizer()
+                    ..onTap = () => debugPrint('Privacy Policy')),
+            ]),
+          ],
+        ),
+      );
 }
