@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_application_2/index.dart';
 
+/// TODO: - poxance Course data voch te hat hat
 class Course extends StatefulWidget {
   const Course({
     super.key,
@@ -65,6 +66,7 @@ class Course extends StatefulWidget {
 class _CourseState extends State<Course> {
   bool liked = false;
 
+  /// TODO: - liked function han classic durs
   void _setLiked() {
     setState(() {
       liked = !liked;
@@ -130,6 +132,7 @@ class _CourseState extends State<Course> {
           ),
         ],
       ),
+      /// TODO: - liked el piti kazmi tvyalid mas
       Padding(
           padding: const EdgeInsets.only(top: 35.0, right: 10.0),
           child: IconButton(

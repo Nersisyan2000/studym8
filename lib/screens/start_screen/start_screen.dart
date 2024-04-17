@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/index.dart';
 
+/// TODO: - classi ev file anuny piti nuyny linen
 class FirstScreen extends StatefulWidget {
   const FirstScreen({super.key});
 

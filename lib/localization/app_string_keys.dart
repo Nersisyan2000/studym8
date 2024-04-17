@@ -1,5 +1,7 @@
 import 'package:flutter_application_2/index.dart';
 
+/// TODO: - ch kareli regex-ery , route anunnery localizacnel
+///
 const String signUp = 'sign_up';
 const String login = 'login';
 const String welcome = 'welcome';

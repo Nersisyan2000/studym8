@@ -5,7 +5,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
     case homeRoute:
       return MaterialPageRoute(
-        builder: (context) => const SearchScreen(),
+        builder: (context) => const FirstScreen(),
         settings: settings,
       );
     case onboardingRoute:

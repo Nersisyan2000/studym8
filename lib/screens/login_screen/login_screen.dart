@@ -18,6 +18,7 @@ class LoginScreen extends StatelessWidget {
             loginTitle.localized,
             style: roboto16TextStyle.copyWith(fontWeight: FontWeight.w400),
           ),
+          /// TODO: - Ete widgeti 2 koxmn el taracq ka lav e padding tas
           const SizedBox(
             height: 34.0,
           ),
@@ -48,6 +49,7 @@ class LoginScreen extends StatelessWidget {
           const SizedBox(
             height: 24.0,
           ),
+          /// TODO: -- onPress chi ashxati
           CustomRichToSwitch(
             primaryText: toSignUpTextPartOne.localized,
             clicableText: createAccount.localized,

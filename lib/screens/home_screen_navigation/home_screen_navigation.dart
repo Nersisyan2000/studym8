@@ -45,6 +45,7 @@ class _HomeScreenNavigationState extends State<HomeScreenNavigation> {
             initialRoute: allCoursesRoute,
           ),
           const FavouriteScreen(),
+          /// TODO: - inchi 2 hat profile unis ????
           const LogedProfileScreen(),
         ],
       ),

@@ -12,6 +12,7 @@ class AllCourses extends StatelessWidget {
       appBar: AppBar(
         leading: InkWell(
           onTap: () {
+            /// TODO: - currentState null linel chlinely piti anpayman stygvi
             homeTabNavigatorKey.currentState!.pop();
           },
           child: const Padding(
@@ -43,6 +44,7 @@ class AllCourses extends StatelessWidget {
               for (var course in allCoursesData)
                 InkWell(
                   onTap: () {
+                    /// TODO: - currentState null linel chlinely piti anpayman stygvi
                     navigatorKey.currentState!
                         .pushNamed(singlePopularCourseRoute, arguments: course);
                   },

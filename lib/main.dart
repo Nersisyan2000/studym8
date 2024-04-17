@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       onGenerateRoute: onGenerateRoute,
+      /// TODO: - maini mej piti lini initial route mijankyal, vortex piti voroshvi useri muty
       navigatorKey: navigatorKey,
     );
   }

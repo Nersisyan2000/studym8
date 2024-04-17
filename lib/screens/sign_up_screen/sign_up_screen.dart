@@ -27,6 +27,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           const SizedBox(
             height: 34.0,
           ),
+          /// TODO: - info text vory heto kkarmri mi tox e u keter e dre,tox toxer shat lini
           const CustomForm(
             isLogin: false,
           ),
@@ -54,6 +55,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           const SizedBox(
             height: 24.0,
           ),
+          ///TODO: - onPress chi ashxati
           CustomRichToSwitch(
             primaryText: alreadyHaveAccount.localized,
             clicableText: login.localized,
