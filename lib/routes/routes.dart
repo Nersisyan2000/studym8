@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/index.dart';
+import 'package:flutter_application_2/resources/constants/constants.dart';
 
 Route<dynamic> onGenerateRoute(RouteSettings settings) {
   switch (settings.name) {
     case homeRoute:
       return MaterialPageRoute(
-        builder: (context) => const SearchScreen(),
+        builder: (context) => const OnboardScreen(),
         settings: settings,
       );
     case onboardingRoute:
@@ -31,14 +32,14 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
         builder: (context) => const ProfileScreen(),
         settings: settings,
       );
-    case logedHomeRoute:
-      return MaterialPageRoute(
-        builder: (context) => HomeScreenNavigation(
-          // arguments: settings.arguments as ProfileData,
-          selectedInd: settings.arguments as int,
-        ),
-        settings: settings,
-      );
+    // case homeRouteNavigation:
+    //   return MaterialPageRoute(
+    //     builder: (context) => HomeScreenNavigation(
+    //       // arguments: settings.arguments as ProfileData,
+    //       selectedInd: settings.arguments as int,
+    //     ),
+    //     settings: settings,
+    //   );
     case singleCourseRoute:
       return MaterialPageRoute(
         builder: (context) => SingleCourseScreen(
@@ -90,10 +91,10 @@ Route<dynamic> logedHomeGeneratedPageRoutes(RouteSettings settings) {
       settings: settings,
       builder: (BuildContext context) {
         switch (settings.name) {
-          case logedHomeRoute:
+          case homeRouteNavigation:
             return const HomeScreen();
           case allCoursesRoute:
-            return const AllCourses();
+            return const AllCoursesScreen();
           default:
             return const Center(
               child: Text('Home not found!'),

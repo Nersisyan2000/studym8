@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/index.dart';
+import 'package:flutter_application_2/resources/constants/constants.dart';
 
 class CustomForm extends StatefulWidget {
   const CustomForm({super.key, required this.isLogin});
@@ -68,7 +70,7 @@ class _CustomFormState extends State<CustomForm> {
               // ScaffoldMessenger.of(context).showSnackBar(
               //   const SnackBar(content: Text('Processing Data')),
               // );
-              Navigator.pushNamed(context, profileRoute);
+              context.router.pushNamed(profileRoute);
             }
           },
           title: !widget.isLogin ? signUp.localized : login.localized,

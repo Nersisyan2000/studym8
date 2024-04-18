@@ -1,10 +1,12 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/index.dart';
 import 'package:flutter_application_2/main.dart';
 
-class AllCourses extends StatelessWidget {
-  const AllCourses({super.key});
+@RoutePage()
+class AllCoursesScreen extends StatelessWidget {
+  const AllCoursesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

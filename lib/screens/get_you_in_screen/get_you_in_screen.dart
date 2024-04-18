@@ -1,6 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/index.dart';
+import 'package:flutter_application_2/resources/constants/constants.dart';
+import 'package:flutter_application_2/routes/app_router.gr.dart';
 
+@RoutePage()
 class GetYouInScreen extends StatelessWidget {
   const GetYouInScreen({super.key});
 
@@ -52,7 +56,7 @@ class GetYouInScreen extends StatelessWidget {
             ElevatedButton(
               style: customElevatedButtonStyle,
               onPressed: () {
-                Navigator.pushNamed(context, signUpAndLoginRoute, arguments: 1);
+                context.router.push(SignUpAndLoginRoute(arguments: 1));
               },
               child: Text(
                 signInWithPassword.localized,

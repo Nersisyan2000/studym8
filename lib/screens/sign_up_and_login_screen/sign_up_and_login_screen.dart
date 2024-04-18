@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/index.dart';
 
+@RoutePage()
 class SignUpAndLoginScreen extends StatefulWidget {
   const SignUpAndLoginScreen({super.key, required this.arguments});
 
@@ -15,6 +17,7 @@ class _SignUpAndLoginScreenState extends State<SignUpAndLoginScreen> {
 
   @override
   void initState() {
+    debugPrint('${widget.arguments}');
     setState(() {
       screenIndex = widget.arguments;
       debugPrint('$screenIndex');

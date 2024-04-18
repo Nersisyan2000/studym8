@@ -1,7 +1,10 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:flutter_application_2/routes/app_router.gr.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/index.dart';
 
+@RoutePage()
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
 
@@ -41,7 +44,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               CustomElevatedButton.purpleHighButton(
                 title: textContinue.localized,
                 onPress: () {
-                  Navigator.pushNamed(context, logedHomeRoute, arguments: 0);
+                  context.router.push(HomeRouteNavigation());
                 },
                 height: 61.0,
               ),

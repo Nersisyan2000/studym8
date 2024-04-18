@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/index.dart';
+import 'package:flutter_application_2/routes/app_router.gr.dart';
 
 class EnrollBottomSheet extends StatelessWidget {
   const EnrollBottomSheet({super.key});
@@ -25,7 +27,7 @@ class EnrollBottomSheet extends StatelessWidget {
                 CustomElevatedButton.purpleButton(
                   title: viewCourse.localized,
                   onPress: () {
-                    Navigator.pushNamed(context, logedHomeRoute, arguments: 1);
+                    // context.router.push(HomeRouteNavigation());
                   },
                 ),
                 const SizedBox(
@@ -41,6 +43,5 @@ class EnrollBottomSheet extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

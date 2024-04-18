@@ -1,6 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/index.dart';
+import 'package:flutter_application_2/resources/constants/constants.dart';
 
+@RoutePage()
 class OnboardScreen extends StatefulWidget {
   const OnboardScreen({super.key});
 
@@ -38,7 +41,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
               CustomElevatedButton.mainButton(
                   title: skip.localized,
                   onPress: () {
-                    Navigator.pushNamed(context, getYouInRoute);
+                    context.router.pushNamed(getYouInRoute);
                   }),
               CustomElevatedButton.mainButton(
                   title: next.localized,
@@ -47,7 +50,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                       if (index < data.length - 1) {
                         index++;
                       } else {
-                        Navigator.pushNamed(context, getYouInRoute);
+                        context.router.pushNamed(getYouInRoute);
                       }
                     });
                   })

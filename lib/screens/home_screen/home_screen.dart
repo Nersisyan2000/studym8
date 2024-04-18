@@ -1,11 +1,18 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/index.dart';
+import 'package:flutter_application_2/routes/app_router.gr.dart';
+import 'package:flutter_application_2/screens/index.dart';
 
+final _innerRouterKey = GlobalKey<AutoRouterState>();
+
+@RoutePage()
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    AutoRouter.of(context);
     return Scaffold(
       body: SafeArea(
           child: Padding(
@@ -47,7 +54,28 @@ class HomeScreen extends StatelessWidget {
             ),
             PopularCourses(
               onTapSeeAll: () {
-                homeTabNavigatorKey.currentState?.pushNamed(allCoursesRoute);
+                // context.router.pushNamed('all-courses-route');
+                // context.innerRouterOf<TabsRouter>('all-courses-route');
+                // final router = rootR
+                //     context.innerRouterOf<StackRouter>(OnboardRoute.name);
+                // print(context.router.root);
+                // // print(context.router.root.push(route));
+                // print(context.router.current);
+                AutoRouter.of(context).push(const AllCoursesRoute());
+
+                // AutoRouter.of(context)
+                //     .innerRouterOf<StackRouter>('all-courses-route');
+                // route.push(const AllCoursesRoute());
+                // print(context.router.currentChild!.name);
+
+                // AppRouter.of(context)
+                //     .context
+                //     .tabsRouter
+                //     .childControllers[0]
+                //     .navigate(const AllCoursesRoute());
+
+                // final router = _innerRouterKey.currentState?.controller;
+                // router?.push(const AllCoursesRoute());
               },
             ),
           ],

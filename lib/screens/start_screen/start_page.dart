@@ -1,15 +1,17 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/resources/constants/constants.dart';
 import 'package:flutter_application_2/index.dart';
 
-class FirstScreen extends StatefulWidget {
-  const FirstScreen({super.key});
+@RoutePage()
+class FirstPage extends StatefulWidget {
+  const FirstPage({super.key});
 
   @override
-  State<FirstScreen> createState() => _FirstScreenState();
+  State<FirstPage> createState() => _FirstPageState();
 }
 
-class _FirstScreenState extends State<FirstScreen>
-    with TickerProviderStateMixin {
+class _FirstPageState extends State<FirstPage> with TickerProviderStateMixin {
   late AnimationController controller;
 
   @override
@@ -21,7 +23,7 @@ class _FirstScreenState extends State<FirstScreen>
           });
     controller.repeat(reverse: true);
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.pushReplacementNamed(context, onboardingRoute);
+      context.router.replaceNamed(onboardingRoute);
     });
     super.initState();
   }
@@ -50,7 +52,7 @@ class _FirstScreenState extends State<FirstScreen>
             CircularProgressIndicator(
               value: controller.value,
               color: white,
-            )
+            ),
           ],
         ),
       ),

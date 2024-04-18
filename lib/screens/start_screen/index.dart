@@ -1,1 +1,1 @@
-export './start_screen.dart';
+export 'start_page.dart';

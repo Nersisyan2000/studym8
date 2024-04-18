@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/index.dart';
+import 'package:flutter_application_2/routes/app_router.gr.dart';
 
 final GlobalKey<NavigatorState> homeTabNavigatorKey =
     GlobalKey<NavigatorState>();
@@ -8,54 +10,51 @@ final GlobalKey<NavigatorState> courseTabNavigatorKey =
 final GlobalKey<NavigatorState> homeScreenNavigationGlobalKey =
     GlobalKey<NavigatorState>();
 
-class HomeScreenNavigation extends StatefulWidget {
-  const HomeScreenNavigation({super.key, this.selectedInd});
-
-  // final ProfileDataArguments? arguments;
-  final int? selectedInd;
-
-  @override
-  State<HomeScreenNavigation> createState() => _HomeScreenNavigationState();
-}
-
-class _HomeScreenNavigationState extends State<HomeScreenNavigation> {
-  int _selectedIndex = 0;
-
-  @override
-  void initState() {
-    _selectedIndex = widget.selectedInd ?? 0;
-    super.initState();
-  }
+@RoutePage()
+class HomeScreenNavigation extends StatelessWidget {
+  const HomeScreenNavigation({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return AutoTabsScaffold(
       key: homeScreenNavigationGlobalKey,
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: [
-          CustomNavigation(
-            navigatorKey: homeTabNavigatorKey,
-            generatedRoute: logedHomeGeneratedPageRoutes,
-            initialRoute: logedHomeRoute,
-          ),
-          CustomNavigation(
-            navigatorKey: courseTabNavigatorKey,
-            generatedRoute: myCoursesRoutes,
-            initialRoute: allCoursesRoute,
-          ),
-          const FavouriteScreen(),
-          const LogedProfileScreen(),
-        ],
-      ),
-      bottomNavigationBar: CustomBottomNavigationBar(
-        selectedInd: _selectedIndex,
-        onItemTapped: (int index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
-      ),
+      routes: const [
+        HomeRoute(),
+        CoursesRoute(),
+        FavouriteRoute(),
+        LogedProfileRoute(),
+      ],
+      bottomNavigationBuilder: (_, tabsRouter) {
+        return CustomBottomNavigationBar(
+          selectedInd: tabsRouter.activeIndex,
+          onItemTapped: tabsRouter.setActiveIndex,
+        );
+      },
+      // body: IndexedStack(
+      //   index: _selectedIndex,
+      //   children: [
+      //     CustomNavigation(
+      //       navigatorKey: homeTabNavigatorKey,
+      //       generatedRoute: logedHomeGeneratedPageRoutes,
+      //       initialRoute: homeRouteNavigation,
+      //     ),
+      //     CustomNavigation(
+      //       navigatorKey: courseTabNavigatorKey,
+      //       generatedRoute: myCoursesRoutes,
+      //       initialRoute: allCoursesRoute,
+      //     ),
+      //     const FavouriteScreen(),
+      //     const LogedProfileScreen(),
+      //   ],
+      // ),
+      // bottomNavigationBar: CustomBottomNavigationBar(
+      //   selectedInd: _selectedIndex,
+      //   onItemTapped: (int index) {
+      //     setState(() {
+      //       _selectedIndex = index;
+      //     });
+      //   },
+      // ),
     );
   }
 }
