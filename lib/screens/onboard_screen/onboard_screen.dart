@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/data/source/local/preferences/preferences.dart';
 import 'package:flutter_application_2/index.dart';
 import 'package:flutter_application_2/resources/constants/constants.dart';
 
@@ -41,6 +42,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
               CustomElevatedButton.mainButton(
                   title: skip.localized,
                   onPress: () {
+                    Preferences.setOnBoard(true);
                     context.router.pushNamed(getYouInRoute);
                   }),
               CustomElevatedButton.mainButton(
@@ -50,6 +52,7 @@ class _OnboardScreenState extends State<OnboardScreen> {
                       if (index < data.length - 1) {
                         index++;
                       } else {
+                        Preferences.setOnBoard(true);
                         context.router.pushNamed(getYouInRoute);
                       }
                     });

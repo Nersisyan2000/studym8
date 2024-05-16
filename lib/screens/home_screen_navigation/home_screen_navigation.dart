@@ -17,7 +17,6 @@ class HomeScreenNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
-      key: homeScreenNavigationGlobalKey,
       routes: const [
         HomeRoute(),
         CoursesRoute(),

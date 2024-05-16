@@ -49,7 +49,7 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       );
     case singlePopularCourseRoute:
       return MaterialPageRoute(
-        builder: (context) => SinglePopularCourse(
+        builder: (context) => SinglePopularCourseScreen(
           arguments: settings.arguments as AllCoursesData,
         ),
         settings: settings,

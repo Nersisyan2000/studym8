@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/data/source/local/preferences/preferences.dart';
 import 'package:flutter_application_2/resources/constants/constants.dart';
 import 'package:flutter_application_2/index.dart';
 
@@ -13,6 +14,7 @@ class FirstPage extends StatefulWidget {
 
 class _FirstPageState extends State<FirstPage> with TickerProviderStateMixin {
   late AnimationController controller;
+  var isOnboard = Preferences.getOnBoard ?? false;
 
   @override
   void initState() {
@@ -23,7 +25,11 @@ class _FirstPageState extends State<FirstPage> with TickerProviderStateMixin {
           });
     controller.repeat(reverse: true);
     Future.delayed(const Duration(seconds: 2), () {
-      context.router.replaceNamed(onboardingRoute);
+      if (isOnboard == true) {
+        context.router.replaceNamed(getYouInRoute);
+      } else {
+        context.router.replaceNamed(onboardingRoute);
+      }
     });
     super.initState();
   }

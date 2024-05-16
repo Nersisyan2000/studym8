@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/index.dart';
 
-class SinglePopularCourse extends StatelessWidget {
-  const SinglePopularCourse({super.key, required this.arguments});
+@RoutePage()
+class SinglePopularCourseScreen extends StatelessWidget {
+  const SinglePopularCourseScreen({super.key, required this.arguments});
 
   final AllCoursesData arguments;
 

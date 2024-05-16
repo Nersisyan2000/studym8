@@ -2,9 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/index.dart';
 import 'package:flutter_application_2/routes/app_router.gr.dart';
-import 'package:flutter_application_2/screens/index.dart';
-
-final _innerRouterKey = GlobalKey<AutoRouterState>();
 
 @RoutePage()
 class HomeScreen extends StatelessWidget {
@@ -12,7 +9,6 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AutoRouter.of(context);
     return Scaffold(
       body: SafeArea(
           child: Padding(

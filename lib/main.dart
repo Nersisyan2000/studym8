@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/data/source/local/preferences/preferences.dart';
 import 'package:flutter_application_2/index.dart';
 
-final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
-final innerRouterKey = GlobalKey<AutoRouterState>();
-
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Preferences.sharedPrefernces;
   runApp(const MyApp());
 }
 
@@ -22,13 +22,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      key: innerRouterKey,
       title: projectTitle.localized,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: purple),
         useMaterial3: true,
       ),
-      routerConfig: _appRouter.config(),
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
     );
   }
 }

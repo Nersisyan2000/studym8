@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/index.dart';
-import 'package:flutter_application_2/main.dart';
+import 'package:flutter_application_2/routes/app_router.gr.dart';
 
 @RoutePage()
 class AllCoursesScreen extends StatelessWidget {
@@ -45,8 +45,10 @@ class AllCoursesScreen extends StatelessWidget {
               for (var course in allCoursesData)
                 InkWell(
                   onTap: () {
-                    navigatorKey.currentState!
-                        .pushNamed(singlePopularCourseRoute, arguments: course);
+                    context.router
+                        .push(SinglePopularCourseRoute(arguments: course));
+                    // navigatorKey.currentState!
+                    //     .pushNamed(singlePopularCourseRoute, arguments: course);
                   },
                   child: Course(
                     courseName: course.courseName,

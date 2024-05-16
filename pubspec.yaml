@@ -39,6 +39,7 @@ dependencies:
   pinput: ^4.0.0
   easy_search_bar: ^2.5.0
   auto_route: ^8.0.3
+  shared_preferences: ^2.2.3
 
 dev_dependencies:
   flutter_test:
