@@ -14,7 +14,6 @@ class FirstPage extends StatefulWidget {
 
 class _FirstPageState extends State<FirstPage> with TickerProviderStateMixin {
   late AnimationController controller;
-  var isOnboard = Preferences.getOnBoard ?? false;
 
   @override
   void initState() {
@@ -25,7 +24,7 @@ class _FirstPageState extends State<FirstPage> with TickerProviderStateMixin {
           });
     controller.repeat(reverse: true);
     Future.delayed(const Duration(seconds: 2), () {
-      if (isOnboard == true) {
+      if (Preferences.getOnBoard) {
         context.router.replaceNamed(getYouInRoute);
       } else {
         context.router.replaceNamed(onboardingRoute);

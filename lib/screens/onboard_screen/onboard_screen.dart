@@ -16,6 +16,12 @@ class _OnboardScreenState extends State<OnboardScreen> {
   int index = 0;
 
   @override
+  void initState() {
+    Preferences.setOnBoard(true);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: purple,
@@ -42,7 +48,6 @@ class _OnboardScreenState extends State<OnboardScreen> {
               CustomElevatedButton.mainButton(
                   title: skip.localized,
                   onPress: () {
-                    Preferences.setOnBoard(true);
                     context.router.pushNamed(getYouInRoute);
                   }),
               CustomElevatedButton.mainButton(
@@ -52,7 +57,6 @@ class _OnboardScreenState extends State<OnboardScreen> {
                       if (index < data.length - 1) {
                         index++;
                       } else {
-                        Preferences.setOnBoard(true);
                         context.router.pushNamed(getYouInRoute);
                       }
                     });

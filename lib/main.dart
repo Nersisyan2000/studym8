@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_2/data/source/local/preferences/preferences.dart';
 import 'package:flutter_application_2/index.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Preferences.sharedPrefernces;
+  // await Preferences.removeOnBoard();
   runApp(const MyApp());
 }
 

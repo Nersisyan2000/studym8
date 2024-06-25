@@ -4,16 +4,22 @@ import 'package:shared_preferences/shared_preferences.dart';
 class Preferences {
   Preferences._();
 
-  static SharedPreferences? _sharedPreferences;
+  static SharedPreferences? _sharedInstance;
+
+  static SharedPreferences? get sharedInstance => _sharedInstance;
 
   static Future<void> get sharedPrefernces async {
-    _sharedPreferences ??= await SharedPreferences.getInstance();
+    _sharedInstance ??= await SharedPreferences.getInstance();
   }
 
   static Future<void> setOnBoard(bool newValue) async {
-    _sharedPreferences?.setBool(PreferencesKeys.isOnboard, newValue);
+    _sharedInstance?.setBool(PreferencesKeys.isOnboard, newValue);
   }
 
-  static bool? get getOnBoard =>
-      _sharedPreferences?.getBool(PreferencesKeys.isOnboard);
+  static Future<void> removeOnBoard() async {
+    _sharedInstance?.remove(PreferencesKeys.isOnboard);
+  }
+
+  static bool get getOnBoard =>
+      _sharedInstance?.getBool(PreferencesKeys.isOnboard) ?? false;
 }
