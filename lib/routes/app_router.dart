@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'app_router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Screen,Route')
@@ -13,7 +12,7 @@ class AppRouter extends $AppRouter {
         AutoRoute(page: ProfileRoute.page),
         AutoRoute(page: HomeRouteNavigation.page, children: [
           AutoRoute(page: EmptyRouterRoute.page, children: [
-            AutoRoute(page: HomeRoute.page, initial: true),
+            AutoRoute(page: HomeRoute.page),
             AutoRoute(page: AllCoursesRoute.page),
             AutoRoute(page: SinglePopularCourseRoute.page),
           ]),
@@ -22,6 +21,4 @@ class AppRouter extends $AppRouter {
           AutoRoute(page: LogedProfileRoute.page),
         ]),
       ];
-
-  static of(BuildContext context) {}
 }

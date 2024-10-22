@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/index.dart';
 
+// ignore: must_be_immutable
 class SocialButton extends StatelessWidget {
   SocialButton._({super.key, this.data, required this.onPress});
 

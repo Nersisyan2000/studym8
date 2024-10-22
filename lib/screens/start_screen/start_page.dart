@@ -25,8 +25,10 @@ class _FirstPageState extends State<FirstPage> with TickerProviderStateMixin {
     controller.repeat(reverse: true);
     Future.delayed(const Duration(seconds: 2), () {
       if (Preferences.getOnBoard) {
+        if (!mounted) return;
         context.router.replaceNamed(getYouInRoute);
       } else {
+        if (!mounted) return;
         context.router.replaceNamed(onboardingRoute);
       }
     });

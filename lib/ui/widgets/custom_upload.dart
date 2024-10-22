@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter_application_2/index.dart';
 
+// ignore: must_be_immutable
 class CustomUpload extends StatefulWidget {
   CustomUpload({super.key, required this.image});
 
