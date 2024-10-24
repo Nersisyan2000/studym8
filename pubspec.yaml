@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  studym8_uikit:
+    path: packages/studym8_uikit
   grouped_list: ^5.1.2
   cupertino_icons: ^1.0.6
   image_picker: ^1.0.5

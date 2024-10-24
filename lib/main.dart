@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/data/source/local/preferences/preferences.dart';
 import 'package:flutter_application_2/index.dart';
+import 'package:studym8_uikit/studym8_uikit.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,13 +23,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      title: projectTitle.localized,
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: purple),
-        useMaterial3: true,
-      ),
-      routerConfig: _appRouter.config()
-    );
+        title: projectTitle.localized,
+        debugShowCheckedModeBanner: false,
+        theme: lightTheme,
+        routerConfig: _appRouter.config());
   }
 }
