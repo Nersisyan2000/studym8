@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/index.dart';
+import 'package:studym8_uikit/studym8_uikit.dart';
 
 class ScreenTitle extends StatelessWidget {
   const ScreenTitle({super.key, required this.title});

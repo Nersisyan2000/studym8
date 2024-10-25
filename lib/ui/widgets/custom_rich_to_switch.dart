@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/index.dart';
+import 'package:studym8_uikit/studym8_uikit.dart';
 
 class CustomRichToSwitch extends StatelessWidget {
   const CustomRichToSwitch(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_2/index.dart';
+import 'package:studym8_uikit/studym8_uikit.dart';
 
 class DividerWithText extends StatelessWidget {
   const DividerWithText({super.key, required this.title});

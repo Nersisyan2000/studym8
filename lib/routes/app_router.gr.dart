@@ -11,30 +11,30 @@
 import 'package:auto_route/auto_route.dart' as _i14;
 import 'package:flutter/material.dart' as _i15;
 import 'package:flutter_application_2/index.dart' as _i16;
-import 'package:flutter_application_2/screens/all_courses/all_courses.dart'
+import 'package:flutter_application_2/presentation/screens/all_courses/all_courses.dart'
     as _i1;
-import 'package:flutter_application_2/screens/courses_screen/courses_screen.dart'
+import 'package:flutter_application_2/presentation/screens/courses_screen/courses_screen.dart'
     as _i2;
 import 'package:flutter_application_2/routes/empty_router_page.dart' as _i3;
-import 'package:flutter_application_2/screens/favourites_screen/favourites_screen.dart'
+import 'package:flutter_application_2/presentation/screens/favourites_screen/favourites_screen.dart'
     as _i4;
-import 'package:flutter_application_2/screens/get_you_in_screen/get_you_in_screen.dart'
+import 'package:flutter_application_2/presentation/screens/get_you_in_screen/get_you_in_screen.dart'
     as _i6;
-import 'package:flutter_application_2/screens/home_screen/home_screen.dart'
+import 'package:flutter_application_2/presentation/screens/home_screen/home_screen.dart'
     as _i7;
-import 'package:flutter_application_2/screens/home_screen_navigation/home_screen_navigation.dart'
+import 'package:flutter_application_2/presentation/screens/home_screen_navigation/home_screen_navigation.dart'
     as _i8;
-import 'package:flutter_application_2/screens/loged_profile_screen/loged_profile_screen.dart'
+import 'package:flutter_application_2/presentation/screens/loged_profile_screen/loged_profile_screen.dart'
     as _i9;
-import 'package:flutter_application_2/screens/onboard_screen/onboard_screen.dart'
+import 'package:flutter_application_2/presentation/screens/onboard_screen/onboard_screen.dart'
     as _i10;
-import 'package:flutter_application_2/screens/profile_screen/profile_screen.dart'
+import 'package:flutter_application_2/presentation/screens/profile_screen/profile_screen.dart'
     as _i11;
-import 'package:flutter_application_2/screens/sign_up_and_login_screen/sign_up_and_login_screen.dart'
+import 'package:flutter_application_2/presentation/screens/sign_up_and_login_screen/sign_up_and_login_screen.dart'
     as _i12;
-import 'package:flutter_application_2/screens/single_pupular_course/single_popular_course_screen.dart'
+import 'package:flutter_application_2/presentation/screens/single_pupular_course/single_popular_course_screen.dart'
     as _i13;
-import 'package:flutter_application_2/screens/start_screen/start_page.dart'
+import 'package:flutter_application_2/presentation/screens/start_screen/start_page.dart'
     as _i5;
 
 abstract class $AppRouter extends _i14.RootStackRouter {
